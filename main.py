@@ -1,5 +1,5 @@
 from src.build_flask import *
-
+from src.backend.game.endpoints import game_index
 
 def err_return(code: int = 404):
     """
@@ -16,4 +16,4 @@ def index():
     return render_template('home/index.html') #redirect('/jobs')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=5000)
+    app.run(host='0.0.0.0',port=5000,debug=True)

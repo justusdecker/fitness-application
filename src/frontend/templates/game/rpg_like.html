@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="rpg-header">
+        <div class="avatar-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png?_=20150327203541" alt="Avatar" class="avatar-img" width="70px" height="70px">
+            <div class="level-badge">Lv. {{ level }}</div>
+        </div>
+        <div class="user-info">
+            <h2>{{ name }}</h2>
+            <p>placeholder</p>
+        </div>
+    </div>
+
+    <div class="currency-container">
+        <div class="currency-item">
+            <span class="coin">📀</span> <span>{{ coin }}</span>
+        </div>
+        <div class="currency-item">
+            <span class="ruby">💎</span> <span>{{ ruby }}</span>
+        </div>
+    </div>
+
+    <div class="xp-section">
+        <div class="xp-label">
+            <span>XP Fortschritt</span>
+            <span>{{ current_xp }} / {{ max_xp }} XP</span>
+        </div>
+        <div class="xp-bar-background">
+            <div class="xp-bar-fill" style="{{ xp_bar_fill}}"></div>
+        </div>
+    </div>
+
+    <div class="stats-grid">
+        <div class="stat-box">
+            <span>Badges</span> 12
+        </div>
+        
+    </div>
+</div>

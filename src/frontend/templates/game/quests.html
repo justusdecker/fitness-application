@@ -1,0 +1,26 @@
+{% for quest in quests %}
+    <div class="card">
+        <h1>{{quest}}</h1>    
+        <div class="info-card">
+            <p>{{quests[quest].message}}</p>
+        </div>
+        <div class="besides">
+
+            <div class="high-icon btn">{{quests[quest].xp}}✨</div>
+        </div>
+        
+        <div class="besides">
+            {%if quests[quest].stackable%}
+            <p class="high-icon">📈</p>
+            {% endif %}
+            {%if quests[quest].type == 'sport'%}
+            <p class="high-icon">👟</p>
+            {%elif quests[quest].type == 'workout'%}
+            <p class="high-icon">🤸‍♂️</p>
+            {%elif quests[quest].type == 'nutrition'%}
+            <p class="high-icon">🍗</p>
+            {% endif %}
+            
+        </div>
+    </div>
+{% endfor %}

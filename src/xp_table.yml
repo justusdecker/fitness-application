@@ -1,0 +1,97 @@
+Ein Liter Wasser:
+  message: Trinke ein Liter Wasser
+  xp: 1
+  daily: false
+  weekly: false
+  stackable: false
+  type: nutrition
+Gehen je Kilometer:
+  message: Gehe 1000 meter
+  xp: 3
+  daily: false
+  weekly: false
+  stackable: true
+  type: sport
+Schnelles gehen je Kilometer:
+  message: Gehe im Gleichschritt einen Kilometer
+  xp: 6
+  daily: false
+  weekly: false
+  stackable: true
+  type: sport
+Joggen je Kilometer:
+  message: Jogge einen Kilometer
+  xp: 10
+  daily: false
+  weekly: false
+  stackable: true
+  type: sport
+50 meter Sprint:
+  message: Sprinte 50 meter
+  xp: 10
+  daily: false
+  weekly: false
+  stackable: true
+  type: sport
+Schwimme eine Bahn:
+  message: Schwimme 50 meter
+  xp: 15
+  daily: false
+  weekly: false
+  stackable: true
+  type: sport
+Absolviere Workout 01:
+  message: Absolviere das Workout von Sascha Huber.
+  xp: 50
+  daily: true
+  weekly: false
+  stackable: false
+  type: workout
+Gesundes Frühstück:
+  message: Esse gesundes Frühstück
+  xp: 5
+  daily: true
+  weekly: false
+  stackable: true
+  type: nutrition
+Gesundes Mittagessen:
+  message: Esse gesund zu Mittag
+  xp: 5
+  daily: true
+  weekly: false
+  stackable: true
+  type: nutrition
+Keine Softdrinks:
+  message: Lass das Zeug weg
+  xp: 5
+  daily: true
+  weekly: false
+  stackable: true
+  type: nutrition
+Gehe mindestens 5 Kilometer:
+  message: 5 Kilometer Laufen
+  xp: 25
+  daily: true
+  weekly: false
+  stackable: true
+  type: sport
+Workoutflow:
+  message: 3 Workouts in den letzten 7 Tagen
+  xp: 250
+  daily: false
+  weekly: true
+  stackable: true
+  type: sport
+  xp_multiplier: .5
+  conditions:
+    - 3x - type workout - 7d
+Langer Lauf:
+  message: Gehe in der Woche 50km
+  xp: 250
+  daily: false
+  weekly: true
+  stackable: true
+  type: sport
+  xp_multiplier: .5
+  conditions:
+    - 50km - subtype walk

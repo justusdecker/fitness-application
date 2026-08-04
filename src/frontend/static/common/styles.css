@@ -2,7 +2,56 @@
     padding: 0;
     margin: 0; 
 }
+
+:root {
+    --bg-dark: #242432;
+    --panel-bg: #2d2d2d;
+}
+
 body {
     background-color: #242424;
     color: #d0d0d0;
+    font-family: 'Segoe UI';
+    height: 100vh;
+    justify-items: center;
+    align-content: center;
+}
+.card {
+    background-color: var(--panel-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    width: 50%;
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.info-card {
+    background-color: var(--panel-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px;
+    width: calc(100% - (2 * 22px));
+    padding: 20px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.besides {
+    display: flex;
+}
+
+.btn {
+    background-color: #05966899;
+    border-radius: 10px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.125em 0.5em;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #059669;
 }

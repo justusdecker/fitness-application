@@ -1,12 +1,14 @@
 {% for quest in quests %}
     <div class="card">
         <h1>{{quest}}</h1>    
-        <div class="info-card">
-            <p>{{quests[quest].message}}</p>
-        </div>
+        
         <div class="besides">
-
-            <div class="high-icon btn">{{quests[quest].xp}}✨</div>
+            <div class="info-card">
+                <p>{{quests[quest].message}}</p>
+            </div>
+            <form action="game/buy/{{quest}}" method="get">
+                <button class="high-icon btn" id="{{quest}}">{{quests[quest].xp}}✨</button>
+            </form>
         </div>
         
         <div class="besides">

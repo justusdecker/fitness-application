@@ -25,14 +25,40 @@
             <span>{{ current_xp }} / {{ max_xp }} XP</span>
         </div>
         <div class="xp-bar-background">
-            <div class="xp-bar-fill" style="{{ xp_bar_fill}}"></div>
+            <div class="xp-bar-fill" style="width:{{xp_bar_fill}}%;"></div>
         </div>
     </div>
 
     <div class="stats-grid">
-        <div class="stat-box">
-            <span>Badges</span> 12
+        {% for key in history_count %}
+        <div class="stat-box 
+        {% if history_count[key] >= 110 %}
+        divine
+        {% elif history_count[key] >= 100 %}
+        cosmic
+        {% elif history_count[key] >= 90 %}
+        ancient
+        {% elif history_count[key] >= 80 %}
+        relic
+        {% elif history_count[key] >= 70 %}
+        unique
+        {% elif history_count[key] >= 60 %}
+        mythic
+        {% elif history_count[key] >= 50 %}
+        legendary
+        {% elif history_count[key] >= 40 %}
+        epic
+        {% elif history_count[key] >= 30 %}
+        rare
+        {% elif history_count[key] >= 20 %}
+        uncommon
+        {% elif history_count[key] >= 10 %}
+        common
+        {% endif %}
+        ">
+            <span>{{key}}</span> {{history_count[key]}}
         </div>
+        {% endfor %}
         
     </div>
 </div>

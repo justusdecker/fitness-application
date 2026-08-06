@@ -55,3 +55,31 @@ body {
 .btn:hover {
     background-color: #059669;
 }
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+}
+
+
+
+
+
+.nav-btn {
+  background-color: #333;
+  color: white;
+  border: none;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.nav-btn:hover {
+  background-color: #555;
+}

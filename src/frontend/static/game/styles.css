@@ -223,3 +223,7 @@
 .big-icon {
     font-size: 3em;
 }
+
+.quests:not(.active) {
+    display: none;
+}

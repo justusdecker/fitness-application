@@ -1,8 +1,10 @@
 {% extends 'default/default.html' %}
 {% block ccss %}
 <link rel="stylesheet" href="{{ url_for('static', filename='game/styles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='game/play_cards.css') }}">
 {% endblock %}
 {% block content %}
 {% include 'game/rpg_like.html' %}
 {% include 'game/quests.html' %}
+{% include 'game/card_inventory.html' %}
 {% endblock %}

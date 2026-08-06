@@ -1,0 +1,36 @@
+<div class="all-play-cards">
+    {% for card in cards %}
+<div class="play-card-container">
+    <div class="play-card">
+        <div class="play-card-header">
+            <h2 class="play-card-title">{{card.title}}</h2>
+            <span class="play-card-cost">placeholder</span>
+        </div>
+            
+        <div class="play-card-image-container">
+            <img src="https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=600&auto=format&fit=crop" alt="Drachenkrieger" class="play-card-image">
+        </div>
+            
+        <div class="play-card-body">
+            <p class="play-card-description">
+                {{card.description}}
+            </p>
+        </div>
+            
+        <div class="play-card-footer">
+            <div class="stat atk">
+                <span class="stat-label">ATK</span>
+                <span class="stat-value">{{card.attack}}</span>
+            </div>
+            <div class="stat def">
+                <span class="stat-label">DEF</span>
+                <span class="stat-value">{{card.defense}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+
+<script src ="{{ url_for('static', filename='game/pct.js') }}"></script>

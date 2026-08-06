@@ -1,6 +1,7 @@
 Ein Liter Wasser:
   message: Trinke ein Liter Wasser
   xp: 1
+  coin: 3
   daily: false
   weekly: false
   stackable: false
@@ -8,6 +9,7 @@ Ein Liter Wasser:
 Gehen je Kilometer:
   message: Gehe 1000 meter
   xp: 3
+  coin: 15
   daily: false
   weekly: false
   stackable: true
@@ -15,6 +17,7 @@ Gehen je Kilometer:
 Schnelles gehen je Kilometer:
   message: Gehe im Gleichschritt einen Kilometer
   xp: 6
+  coin: 30
   daily: false
   weekly: false
   stackable: true
@@ -22,6 +25,7 @@ Schnelles gehen je Kilometer:
 Joggen je Kilometer:
   message: Jogge einen Kilometer
   xp: 10
+  coin: 50
   daily: false
   weekly: false
   stackable: true
@@ -29,6 +33,7 @@ Joggen je Kilometer:
 50 meter Sprint:
   message: Sprinte 50 meter
   xp: 10
+  coin: 25
   daily: false
   weekly: false
   stackable: true
@@ -36,6 +41,7 @@ Joggen je Kilometer:
 Schwimme eine Bahn:
   message: Schwimme 50 meter
   xp: 15
+  coin: 35
   daily: false
   weekly: false
   stackable: true
@@ -43,6 +49,8 @@ Schwimme eine Bahn:
 Absolviere Workout 01:
   message: Absolviere das Workout von Sascha Huber.
   xp: 50
+  coin: 50
+  ruby: 1
   daily: true
   weekly: false
   stackable: false
@@ -50,6 +58,7 @@ Absolviere Workout 01:
 Gesundes Frühstück:
   message: Esse gesundes Frühstück
   xp: 5
+  coin: 5
   daily: true
   weekly: false
   stackable: true
@@ -57,6 +66,7 @@ Gesundes Frühstück:
 Gesundes Mittagessen:
   message: Esse gesund zu Mittag
   xp: 5
+  coin: 5
   daily: true
   weekly: false
   stackable: true
@@ -64,6 +74,7 @@ Gesundes Mittagessen:
 Keine Softdrinks:
   message: Lass das Zeug weg
   xp: 5
+  coin: 5
   daily: true
   weekly: false
   stackable: true
@@ -71,6 +82,7 @@ Keine Softdrinks:
 Gehe mindestens 5 Kilometer:
   message: 5 Kilometer Laufen
   xp: 25
+  coin: 25
   daily: true
   weekly: false
   stackable: true
@@ -78,6 +90,8 @@ Gehe mindestens 5 Kilometer:
 Workoutflow:
   message: 3 Workouts in den letzten 7 Tagen
   xp: 250
+  coin: 250
+  ruby: 3
   daily: false
   weekly: true
   stackable: true

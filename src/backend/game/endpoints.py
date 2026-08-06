@@ -5,7 +5,13 @@ from src.backend.game.person import Person
 from time import time
 with open('./src/xp_table.yml', encoding='utf-8') as f:
     QUESTS = safe_load(f)
-        
+
+class Card:
+    title = 'Katze'
+    description = 'Ein Engel... manchmal'
+    attack = 100
+    defense = 100
+
 PERSON = Person('Justus')
 def get_level(xp: int):
     return xp // 250
@@ -21,6 +27,8 @@ def game_buy(key: str):
     print(key)
     
     PERSON.xp += QUESTS[key]['xp']
+    PERSON.coin += QUESTS[key]['coin'] if 'coin' in QUESTS[key] else 0
+    PERSON.ruby += QUESTS[key]['ruby'] if 'ruby' in QUESTS[key] else 0
     PERSON.history.add(int(time()*1000), key)
     PERSON.save()
     return redirect('/game')
@@ -44,4 +52,5 @@ def game_index():
         ruby = PERSON.ruby,
         quests = QUESTS,
         xp_bar_fill = xpbf,
-        history_count = PERSON.history.count()) 
+        history_count = PERSON.history.count(),
+        cards= [Card(), Card(), Card(), Card()]) 

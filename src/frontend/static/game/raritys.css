@@ -1,0 +1,18 @@
+:root {
+    --rarity-background-alpha: 0.08;
+    --rarity-border-alpha: 0.4;
+    --rarity-border-highlight-alpha: 0.6;
+
+    --rarity-common: #ffffff;
+    --rarity-uncommon: #2ecc71;
+    --rarity-rare-bg: #3498db;
+    --rarity-epic-bg: #9b59b6;
+    --rarity-legendary-bg: #f1c40f;
+    --rarity-mythic: #e74c3c;
+    --rarity-unique: #1abc9c;
+    --rarity-relic: #d35400;
+    --rarity-ancient: #2ed573;
+    --rarity-cosmic: #ff6b81;
+    --rarity-divine: #74b9ff;
+
+}

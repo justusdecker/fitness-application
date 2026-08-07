@@ -6,12 +6,32 @@ from time import time
 with open('./src/xp_table.yml', encoding='utf-8') as f:
     QUESTS = safe_load(f)
 
-class Card:
-    title = 'Katze'
-    description = 'Ein Engel... manchmal'
-    attack = 100
-    defense = 100
+with open('./src/cards.yml', encoding='utf-8') as f:
+    CARDS = safe_load(f)
 
+class Card:
+    def __init__(self, title, description,cost, img,rarity):
+        self.title = title
+        self.description = description
+        self.cost = cost
+        self.rarity = rarity
+        self.max_powerup = 0
+        self.img = img
+    @property
+    def rarityAsStr(self) -> str:
+        return ['common',
+         'uncommon',
+         'rare',
+         'epic',
+         'legendary',
+         'mythic',
+         'unique',
+         'relic',
+         'ancient',
+         'cosmic',
+         'divine'][self.rarity]
+        
+ALL_CARDS = [Card(card_info, CARDS[card_info]['description'], CARDS[card_info]['cost'], CARDS[card_info]['img'], CARDS[card_info]['max_rarity']) for card_info in CARDS]
 PERSON = Person('Justus')
 def get_level(xp: int):
     return xp // 250
@@ -53,4 +73,4 @@ def game_index():
         quests = QUESTS,
         xp_bar_fill = xpbf,
         history_count = PERSON.history.count(),
-        cards= [Card(), Card(), Card(), Card()]) 
+        cards= ALL_CARDS) 

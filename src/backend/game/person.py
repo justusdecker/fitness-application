@@ -1,22 +1,21 @@
 from yaml import safe_load, safe_dump
 from os.path import isfile
 
-type HistoryLike = list[tuple[int, str]]
+from src.backend.game.history import History
+from src.backend.game.constants import NEW_DATA
 
-NEW_DATA = {
-    "name": "",
-    "xp": 0,
-    "history": [],
-    "coin": 0,
-    "material": 0
-}
-
-class Person:
+class __Person:
     def __init__(self, name: str):
         self.name = name
         self.xp = 0
         self.coin = 0
         self.material = 0
+        
+        self.coin_multiplier = 1
+        self.material_multiplier = 1
+        self.rarity_min_value = 0
+        self.xp_multiplier = 1
+        
         self.__load(name)
     
     def __load(self, name: str): 
@@ -31,6 +30,12 @@ class Person:
         self.coin = data['coin']
         self.material = data['material']
         self.xp = data['xp']
+        
+        
+        self.coin_multiplier = data['coin_multiplier']
+        self.material_multiplier = data['material_multiplier']
+        self.rarity_min_value = data['rarity_min_value']
+        self.xp_multiplier = data['xp_multiplier']
         
     def save(self):
         data = {
@@ -47,36 +52,6 @@ class Person:
     @property
     def __savePath(self) -> str:
         return f'./data/{self.name}.yml'
-    
-class HistoryEntry:
-    def __init__(self, _time: int, _type: str):
-        self._time = _time
-        self._type = _type
-    
-    def get(self) -> tuple[int, str]:
-        return self._time, self._type
 
-class History:
-    def __init__(self, history: HistoryLike):
-        self.data: list[HistoryEntry] = []
-        self.__load(history)
-    
-    def add(self, _time: int, _type: str):
-        self.data.append(HistoryEntry(_time, _type))
-    
-    def __load(self, history: HistoryLike):
-        for _time, _type in history:
-            self.add(_time, _type)
-    
-    def get(self) -> HistoryLike:
-        return [data.get() for data in self.data]
-    
-    def count(self):
-        count = {}
-        for key in self.data:
-            if key._type in count:
-                count[key._type] += 1
-            else:
-                count[key._type] = 1
-        
-        return count
+
+PERSON = __Person('Justus')

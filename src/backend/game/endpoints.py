@@ -1,13 +1,11 @@
 from src.build_flask import *
-from src.backend.common.fhandler import file_read
-from yaml import safe_load
-from src.backend.game.person import Person
 from time import time
-with open('./src/xp_table.yml', encoding='utf-8') as f:
-    QUESTS = safe_load(f)
 
-with open('./src/cards.yml', encoding='utf-8') as f:
-    CARDS = safe_load(f)
+from src.backend.game.api.main_api import GameAPI
+from src.backend.game.level_calculations import LevelAPI
+from src.backend.game.card import Card
+from src.backend.game.constants import QUESTS, CARDS
+from src.backend.game.person import PERSON
 
 def format_number(n):
     # Liste der Einheiten (kann beliebig erweitert werden)
@@ -33,44 +31,8 @@ def format_number(n):
     
     # Formatiere auf 2 Nachkommastellen (kannst du anpassen, z.B. .1f für eine Nachkommastelle)
     return f"{scaled_value:.2f}{suffixes[suj_index]}"
-
-class Card:
-    def __init__(self, title, description,cost, img,rarity):
-        self.title = title
-        self.description = description
-        self.cost = cost
-        self.rarity = rarity
-        self.max_powerup = 0
-        self.img = img
-    
-    @property
-    def costForRarityLevel(self) -> int:
-        return self.cost ** (self.rarity + 1)
-    
-    @property
-    def rarityAsStr(self) -> str:
-        return ['common',
-         'uncommon',
-         'rare',
-         'epic',
-         'legendary',
-         'mythic',
-         'unique',
-         'relic',
-         'ancient',
-         'cosmic',
-         'divine'][self.rarity]
         
 ALL_CARDS = [Card(card_info, CARDS[card_info]['description'], CARDS[card_info]['cost'], CARDS[card_info]['img'], CARDS[card_info]['max_rarity']) for card_info in CARDS]
-PERSON = Person('Justus')
-def get_level(xp: int):
-    return xp // 250
-
-def get_xp_for_level(xp: int):
-    return xp % 250
-
-def get_xp_max(xp: int):
-    return (get_level(xp) + 1) * 250
 
 @app.route('/game/buy/<key>',methods = [GET])
 def game_buy(key: str):
@@ -83,40 +45,21 @@ def game_buy(key: str):
     PERSON.save()
     return redirect('/game')
 
-@app.route('/api/get')
-def api_get():
-    data = request.args.get('data')
-    if data is None: raise NotImplementedError()
-    return jsonify(
-        {
-            'coin': PERSON.coin,
-            'material': PERSON.material
-        }
-    )
-
-@app.route('/api/increase')
-def api_increase():
-    data = request.args.get('data')
-    if data is None: raise NotImplementedError()
-    PERSON.coin += 1
-    PERSON.save()
-    return "", 200
-
 @app.route('/game',methods = [GET])
 def game_index():
 
     
         
-    xpbf = get_xp_for_level(PERSON.xp)
+    xpbf = LevelAPI.get_xp_for_next_level(PERSON.xp)
     xpbf = xpbf / 250 if xpbf else 0
     xpbf *= 100
     
     return render_template(
         'game/index.html',
         name= PERSON.name,
-        level = get_level(PERSON.xp),
+        level = LevelAPI.get_current_level(PERSON.xp),
         current_xp = PERSON.xp,
-        max_xp = get_xp_max(PERSON.xp),
+        max_xp = LevelAPI.get_xp_max_for_current_level(PERSON.xp),
         coin = PERSON.coin,
         material = PERSON.material,
         quests = QUESTS,

@@ -8,7 +8,7 @@ NEW_DATA = {
     "xp": 0,
     "history": [],
     "coin": 0,
-    "ruby": 0
+    "material": 0
 }
 
 class Person:
@@ -16,7 +16,7 @@ class Person:
         self.name = name
         self.xp = 0
         self.coin = 0
-        self.ruby = 0
+        self.material = 0
         self.__load(name)
     
     def __load(self, name: str): 
@@ -29,14 +29,14 @@ class Person:
             
         self.history = History(data['history'])
         self.coin = data['coin']
-        self.ruby = data['ruby']
+        self.material = data['material']
         self.xp = data['xp']
         
     def save(self):
         data = {
             'xp': self.xp,
             'coin': self.coin,
-            'ruby': self.ruby,
+            'material': self.material,
             'history': self.history.get(),
             'name': self.name
         }

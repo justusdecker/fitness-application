@@ -1,18 +1,40 @@
 :root {
-    --rarity-background-alpha: 0.08;
-    --rarity-border-alpha: 0.4;
-    --rarity-border-highlight-alpha: 0.6;
+    --rarity-default-background: #161622;
 
-    --rarity-common: #ffffff;
-    --rarity-uncommon: #2ecc71;
-    --rarity-rare-bg: #3498db;
-    --rarity-epic-bg: #9b59b6;
-    --rarity-legendary-bg: #f1c40f;
-    --rarity-mythic: #e74c3c;
-    --rarity-unique: #1abc9c;
-    --rarity-relic: #d35400;
-    --rarity-ancient: #2ed573;
-    --rarity-cosmic: #ff6b81;
-    --rarity-divine: #74b9ff;
+    --rarity-common-background: #ffffff33;
+    --rarity-uncommon-background: #2ecc7133;
+    --rarity-rare-background: #3498db33;
+    --rarity-epic-background: #9b59b633;
+    --rarity-legendary-background: #f1c40f33;
+    --rarity-mythic-background: #e74c3c33;
+    --rarity-unique-background: #1abc9c33;
+    --rarity-relic-background: #d3540033;
+    --rarity-ancient-background: #2ed57333;
+    --rarity-cosmic-background: #ff6b8133;
+    --rarity-divine-background: #74b9ff33;
+
+    --rarity-common-shine: #ffffff66;
+    --rarity-uncommon-shine: #2ecc7166;
+    --rarity-rare-shine: #3498db66;
+    --rarity-epic-shine: #9b59b666;
+    --rarity-legendary-shine: #f1c40f66;
+    --rarity-mythic-shine: #e74c3c66;
+    --rarity-unique-shine: #1abc9c66;
+    --rarity-relic-shine: #d3540066;
+    --rarity-ancient-shine: #2ed57366;
+    --rarity-cosmic-shine: #ff6b8166;
+    --rarity-divine-shine: #74b9ff66;
+
+    --rarity-common-normal: #ffffff;
+    --rarity-uncommon-normal: #2ecc71;
+    --rarity-rare-normal: #3498db;
+    --rarity-epic-normal: #9b59b6;
+    --rarity-legendary-normal: #f1c40f;
+    --rarity-mythic-normal: #e74c3c;
+    --rarity-unique-normal: #1abc9c;
+    --rarity-relic-normal: #d35400;
+    --rarity-ancient-normal: #2ed573;
+    --rarity-cosmic-normal: #ff6b81;
+    --rarity-divine-normal: #74b9ff;
 
 }

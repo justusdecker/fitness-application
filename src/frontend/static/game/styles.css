@@ -3,7 +3,7 @@
     --panel-bg: #1e1e24;
     --border-color: #3f3f46;
     --accent-gold: #fbbf24;
-    --accent-ruby: #f43f5e;
+    --accent-material: #f43f5e;
     --accent-xp: #10b981;
     --text-main: #f4f4f5;
     --text-muted: #a1a1aa;
@@ -80,8 +80,8 @@
     color: var(--accent-gold);
 }
 
-.ruby {
-    color: var(--accent-ruby);
+.material {
+    color: var(--accent-material);
 }
 
 /* XP Leiste Sektion */
@@ -130,85 +130,86 @@
 
 /* 1. Gewöhnlich / Common (Weiß/Grau) */
 .stat-box.common {
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(255, 255, 255, 0.1);
-    color: #e0e0e0;
+    background: var(--rarity-common-background);
+    border-color: var(--rarity-common-normal);
+    color: var(--rarity-common-normal);
 }
 
 /* 2. Ungewöhnlich / Uncommon (Grün) */
 .stat-box.uncommon {
-    background: rgba(46, 204, 113, 0.08);
-    border-color: rgba(46, 204, 113, 0.3);
-    color: #2ecc71;
+    background: var(--rarity-uncommon-background);
+    border-color: var(--rarity-uncommon-normal);
+    color: var(--rarity-uncommon-normal);
 }
 
 /* 3. Selten / Rare (Blau) */
 .stat-box.rare {
-    background: rgba(52, 152, 219, 0.08);
-    border-color: rgba(52, 152, 219, 0.3);
-    color: #3498db;
+    background: var(--rarity-rare-background);
+    border-color: var(--rarity-rare-normal);
+    color: var(--rarity-rare-normal);
 }
 
 /* 4. Episch / Epic (Lila / Violett) */
 .stat-box.epic {
-    background: rgba(155, 89, 182, 0.08);
-    border-color: rgba(155, 89, 182, 0.3);
-    color: #9b59b6;
+    background: var(--rarity-epic-background);
+    border-color: var(--rarity-epic-normal);
+    color: var(--rarity-epic-normal);
 }
 
 /* 5. Legendär / Legendary (Gold / Orange) */
 .stat-box.legendary {
-    background: rgba(241, 196, 15, 0.08);
-    border-color: rgba(241, 196, 15, 0.4);
-    color: #f1c40f;
-    box-shadow: 0 0 8px rgba(241, 196, 15, 0.15);
+    background: var(--rarity-legendary-background);
+    border-color: var(--rarity-legendary-normal);
+    color: var(--rarity-legendary-normal);
+    box-shadow: 0 0 8px var(--rarity-legendary-shine);
 }
 
 /* 6. Mythisch / Mythic (Karmesinrot / Pink) */
 .stat-box.mythic {
-    background: rgba(231, 76, 60, 0.08);
-    border-color: rgba(231, 76, 60, 0.4);
-    color: #e74c3c;
-    box-shadow: 0 0 10px rgba(231, 76, 60, 0.2);
+    background: var(--rarity-mythic-background);
+    border-color: var(--rarity-mythic-normal);
+    color: var(--rarity-mythic-normal);
+    box-shadow: 0 0 10px var(--rarity-mythic-shine);
 }
 
 /* 7. Einzigartig / Unique (Türkis / Cyan) */
 .stat-box.unique {
-    background: rgba(26, 188, 156, 0.08);
-    border-color: rgba(26, 188, 156, 0.4);
-    color: #1abc9c;
-    box-shadow: 0 0 10px rgba(26, 188, 156, 0.2);
+    background: var(--rarity-unique-background);
+    border-color: var(--rarity-unique-normal);
+    color: var(--rarity-unique-normal);
+    box-shadow: 0 0 10px var(--rarity-unique-shine);
 }
 
 /* 8. Relikt / Relic (Bronze / Antikgold) */
 .stat-box.relic {
-    background: rgba(211, 84, 0, 0.08);
-    border-color: rgba(211, 84, 0, 0.4);
-    color: #d35400;
+    background: var(--rarity-relic-background);
+    border-color: var(--rarity-relic-normal);
+    color: var(--rarity-relic-normal);
+    box-shadow: 0 0 10px var(--rarity-relic-shine);
 }
 
 /* 9. Uralt / Ancient (Giftgrün / Neon) */
 .stat-box.ancient {
-    background: rgba(46, 213, 115, 0.08);
-    border-color: rgba(46, 213, 115, 0.4);
-    color: #2ed573;
-    box-shadow: 0 0 12px rgba(46, 213, 115, 0.25);
+    background: var(--rarity-ancient-background);
+    border-color: var(--rarity-ancient-normal);
+    color: var(--rarity-ancient-normal);
+    box-shadow: 0 0 10px var(--rarity-ancient-shine);
 }
 
 /* 10. Kosmisch / Cosmic (Neon-Magenta / Pink) */
 .stat-box.cosmic {
-    background: rgba(255, 107, 129, 0.08);
-    border-color: rgba(255, 107, 129, 0.4);
-    color: #ff6b81;
-    box-shadow: 0 0 12px rgba(255, 107, 129, 0.25);
+    background: var(--rarity-ancient-background);
+    border-color: var(--rarity-ancient-normal);
+    color: var(--rarity-ancient-normal);
+    box-shadow: 0 0 10px var(--rarity-ancient-shine);
 }
 
 /* 11. Göttlich / Divine (Strahlendes Weiß-Blau / Himmelblau) */
 .stat-box.divine {
-    background: rgba(116, 185, 255, 0.08);
-    border-color: rgba(116, 185, 255, 0.5);
-    color: #74b9ff;
-    box-shadow: 0 0 15px rgba(116, 185, 255, 0.3);
+    background: var(--rarity-divine-background);
+    border-color: var(--rarity-divine-normal);
+    color: var(--rarity-divine-normal);
+    box-shadow: 0 0 10px var(--rarity-divine-shine);
 }
 
 .stat-box span {
@@ -226,4 +227,26 @@
 
 .quests:not(.active) {
     display: none;
+}
+
+.hit-button {
+    width: 8rem;
+    height: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--rarity-legendary-shine);
+    font-size: 4em;
+    font-weight: 1000;
+    border-radius: 10px;
+    border: var(--rarity-legendary-normal) 2px solid;
+    
+}
+.hit-button:hover {
+    cursor: pointer;
+    background: var(--rarity-legendary-background);
+}
+.hit-button:active {
+    cursor: grab;
+    background: var(--rarity-legendary-normal);
 }

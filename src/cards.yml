@@ -1,0 +1,246 @@
+1kg Hantel:
+  description: ... 
+  img: https://www.therafundo.de/media/a8/73/04/1756363027/412460_hantel_2_kg_1_shop.jpg?ts=1756363027
+  cost: 20
+  type: sport
+  max_rarity: 1
+  min_rarity: 0
+  max_power_increase: 1
+  volume: 1
+2kg Hantel:
+  description: ... 
+  img: https://www.therafundo.de/media/a8/73/04/1756363027/412460_hantel_2_kg_1_shop.jpg?ts=1756363027
+  cost: 50
+  type: sport
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+5kg Hantel:
+  description: ...
+  img: https://www.matchusports.de/wp-content/uploads/sites/3/2022/02/Matchu-Sports-hexa-dumbbell-5-kg.png
+  cost: 100
+  type: sport
+  max_rarity: 4
+  min_rarity: 0
+  max_power_increase: 3
+10kg Hantel:
+  description: ...
+  img: https://www.matchusports.de/wp-content/uploads/sites/3/2022/02/Matchu-Sports-hexa-dumbbell-10kg.png
+  cost: 500
+  type: sport
+  max_rarity: 5
+  min_rarity: 0
+  max_power_increase: 4
+15kg Hantel:
+  description: ...
+  img: https://www.matchusports.de/wp-content/uploads/sites/3/2022/02/Matchu-Sports-hexa-dumbbell-15kg.png
+  cost: 1500
+  type: endurance
+  max_rarity: 6
+  min_rarity: 0
+  max_power_increase: 5
+20kg Hantel:
+  description: ...
+  img: https://www.matchusports.de/wp-content/uploads/sites/3/2022/02/Matchu-Sports-hexa-dumbbell-20kg.png
+  cost: 5000
+  type: endurance
+  max_rarity: 7
+  min_rarity: 0
+  max_power_increase: 6
+Kleine Wasserflasche:
+  description: ...
+  img: https://www.shop.bohemiacristal.de/image/022-014-400-wasserflasche-500ml.jpg?imageassignmentid=9194&version=9195-1
+  cost: 5
+  type: nutrition
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+Mittlere Wasserflasche:
+  description: ...
+  img: https://www.shop.bohemiacristal.de/image/022-014-400-wasserflasche-500ml.jpg?imageassignmentid=9194&version=9195-1
+  cost: 25
+  type: nutrition
+  max_rarity: 5
+  min_rarity: 0
+  max_power_increase: 4
+Große Wasserflasche:
+  description: ...
+  img: https://www.shop.bohemiacristal.de/image/022-014-400-wasserflasche-500ml.jpg?imageassignmentid=9194&version=9195-1
+  cost: 200
+  type: nutrition
+  max_rarity: 7
+  min_rarity: 0
+  max_power_increase: 6
+Wasserkanister:
+  description: ...
+  img: https://i.otto.de/i/otto/6150a1e6-872f-510f-8931-d33587776938/relaxdays-wassertank-wasserkanister-mit-hahn-10-liter.jpg?$formatz$
+  cost: 5000
+  type: nutrition
+  max_rarity: 9
+  min_rarity: 0
+  max_power_increase: 8
+kleiner Proteinshake:
+  description: ...
+  img: https://www.layenberger.com/cdn/shop/collections/02_Kategorien_Menue_Proteinshakes.webp?v=1772442947
+  cost: 10000
+  type: nutrition
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+Langhantelbank:
+  description: ...
+  img: https://hantel-hartmann.de/cdn/shop/files/BodySolidDrueckerbankHantelbank2.jpg?v=1717341917&width=1946
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrades: 
+    - 2kg Hantel
+    - 5kg Hantel
+    - 10kg Hantel
+    - 15kg Hantel
+    - 20kg Hantel
+  upgrade_slots: 5
+Hantelbank:
+  description: ...
+  img: https://www.haus.de/sites/haus.de/files/styles/discover_4x3/public/2021-05/hantelbank_person_training_aufmacher_1309395602_istock.jpg?h=c3bf4dd4&itok=DlB89zkt
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrades: 
+    - 2kg Hantel
+    - 5kg Hantel
+    - 10kg Hantel
+    - 15kg Hantel
+    - 20kg Hantel
+  upgrade_slots: 2
+
+Laufband:
+  description: ...
+  img: https://www.bodymedia.de/fileadmin/_processed_/c/b/csm_das-ultimative-luxus-laufband-mit-neuen-innovationen-fuer-ihren-premium-club_354242daa9.jpg
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Crosstrainer:
+  description: ...
+  img: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTyqEwoQv0hlkGNxhmrjDp8HJzs_B-6fugswdp3jzZ8qizjBzXRNnM_zg&s=10
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Ergometer:
+  description: ...
+  img: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRe5QNpbojRtLtcCQph3Bi4By6uImdDja6pN5f7tbGit1y8QoQ3qTUEFhjS&s=10
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Rudermaschine:
+  description: ...
+  img: https://static.nike.com/a/images/f_auto,cs_srgb/w_1536,c_limit/3c89f647-0980-41ca-a3f7-0ad8d4332aed/5-vorteile-des-trainierens-mit-der-rudermaschine-erkl%C3%A4rt-von-expert-innen.jpg
+  cost: 10000
+  type: building
+  max_rarity: 10
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Mini Stepper:
+  description: ...
+  img: https://www.sportstech.de/cdn/shop/files/section2_b896d470-9024-4a3c-bf4b-3c090b2a8b79.jpg?v=1785256144&width=2000
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Stepper:
+  description: ...
+  img: https://www.kraftmahl.de/sites/default/files/2026-02/stepper-training-dauer-minuten-effektiv.jpg
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Beinpresse:
+  description: ...
+  img: https://quadro.burda-forward.de/ctf/85da0232-f0a4-4b44-8b42-b505c6510310.39bc3c49-0c8c-46e1-898d-817f704cb9ab.jpg?im=RegionOfInterestCrop=(2048,1365),regionOfInterest=(1024,682.5)&hash=6e7181022203799479ec386d3d65f5ffdf4165a48eda27bf8b3f7d72bf6b2217
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Beinbeuger:
+  description: ...
+  img: https://www.jk-sportvertrieb.de/media/13085/catalog/pro-club-s2-beinbeuger.jpg
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Latzug:
+  description: ...
+  img: https://img.hop-sport.de/5hQrreAa8NxGdDVQx5AQTw/045c60a8-d55f-45d3-5342-4ceecffd0400/thumb
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Brustpresse:
+  description: ...
+  img: https://quadro.burda-forward.de/ctf/093c4fcf-c5f8-4604-9d07-0efd18c6014e.05f4e3fc-46d7-4eb5-ab45-0c4664b0bdc1.jpeg?im=RegionOfInterestCrop=(640,360),regionOfInterest=(320,180)&hash=b8ec733c02c8183e393a9f850d6a29b11353ff2aefa1d17a72b377fe6a593f73
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Butterfly:
+  description: ...
+  img: https://img.menshealth.de/_/bg:FFFFFF/f:best/h:243/rt:fill/w:430/plain/244761.jpg
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Abduktor:
+  description: ...
+  img: https://www.bodysolid-store24.de/images/product_images/popup_images/Studiogeraete/Pro-Dual-Inner-and-Outher-Thigh-Machine-Ad-und-Abduktoren-Maschine-DIOT_02.png
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Kabelzug:
+  description: ...
+  img: https://www.online-trainer-lizenz.de/blog/wp-content/uploads/2022/08/Kabelzug-Uebungen.jpg
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2
+Schmiede:
+  description: ...
+  img: https://www.hammer.de/media/amasty/blog/Schulterdr_cken_Blogbild.png
+  cost: 0
+  type: building
+  max_rarity: 2
+  min_rarity: 0
+  max_power_increase: 2
+  upgrade_slots: 2

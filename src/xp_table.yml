@@ -50,7 +50,7 @@ Absolviere Workout 01:
   message: Absolviere das Workout von Sascha Huber.
   xp: 50
   coin: 50
-  ruby: 1
+  material: 1
   daily: true
   weekly: false
   stackable: false
@@ -91,7 +91,7 @@ Workoutflow:
   message: 3 Workouts in den letzten 7 Tagen
   xp: 250
   coin: 250
-  ruby: 3
+  material: 3
   daily: false
   weekly: true
   stackable: true

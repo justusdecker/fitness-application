@@ -1,14 +1,15 @@
 
 
 .all-play-cards{
-  
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto auto;
   gap: 2%;
 }
 
 .play-card-container {
   perspective: 1000px;
 }
+
 /* Die Spielkarte */
 .play-card {
   width: 300px;
@@ -29,6 +30,117 @@
   transition: box-shadow 0.3s ease;
   transform-style: preserve-3d;
   will-change: transform;
+}
+
+.play-card-title.common { color: var(--rarity-common-normal); }
+.play-card-title.uncommon { color: var(--rarity-uncommon-normal); }
+.play-card-title.rare { color: var(--rarity-rare-normal); }
+.play-card-title.epic { color: var(--rarity-epic-normal); }
+.play-card-title.legendary { color: var(--rarity-legendary-normal); }
+.play-card-title.mythic { color: var(--rarity-mythic-normal); }
+.play-card-title.unique { color: var(--rarity-unique-normal); }
+.play-card-title.relic { color: var(--rarity-relic-normal); }
+.play-card-title.ancient { color: var(--rarity-ancient-normal); }
+.play-card-title.cosmic { color: var(--rarity-cosmic-normal); }
+.play-card-title.divine { color: var(--rarity-divine-normal); }
+
+.play-card.common {
+  border-color: var(--rarity-common-normal);
+  color: var(--rarity-common-normal);
+  background: linear-gradient(135deg, var(--rarity-common-background) 0%, var(--rarity-default-background) 100%);
+}
+.play-card.uncommon {
+  border-color: var(--rarity-uncommon-normal);
+  color: var(--rarity-uncommon-normal);
+  background: linear-gradient(135deg, var(--rarity-uncommon-background) 0%, var(--rarity-default-background) 100%);
+}
+.play-card.rare {
+  border-color: var(--rarity-rare-normal);
+  color: var(--rarity-rare-normal);
+  background: linear-gradient(135deg, var(--rarity-rare-background) 0%, var(--rarity-default-background) 100%);
+}
+.play-card.epic {
+  border-color: var(--rarity-epic-normal);
+  color: var(--rarity-epic-normal);
+  background: linear-gradient(135deg, var(--rarity-epic-background) 0%, var(--rarity-default-background) 100%);
+}
+.play-card.legendary {
+  border-color: var(--rarity-legendary-normal);
+  color: var(--rarity-legendary-normal);
+  background: linear-gradient(135deg, var(--rarity-legendary-background) 0%, var(--rarity-default-background) 100%);
+  box-shadow: 0 0 8px var(--rarity-legendary-shine);
+  
+}
+.play-card.mythic {
+  border-color: var(--rarity-mythic-normal);
+  color: var(--rarity-mythic-normal);
+  background: linear-gradient(135deg, var(--rarity-mythic-background) 0%, var(--rarity-default-background) 100%);
+  box-shadow: 0 0 8px var(--rarity-mythic-shine);
+}
+.play-card.unique {
+  border-color: var(--rarity-unique-normal);
+  color: var(--rarity-unique-normal);
+  background: linear-gradient(135deg, var(--rarity-unique-background) 0%, var(--rarity-default-background) 100%);
+  box-shadow: 0 0 8px var(--rarity-unique-shine);
+}
+.play-card.relic {
+  border-color: var(--rarity-relic-normal);
+  color: var(--rarity-relic-normal);
+  background: linear-gradient(135deg, var(--rarity-relic-background) 0%, var(--rarity-default-background) 100%);
+  box-shadow: 0 0 8px var(--rarity-relic-shine);
+}
+.play-card.ancient {
+  border-color: var(--rarity-ancient-normal);
+  color: var(--rarity-ancient-normal);
+  background: linear-gradient(135deg, var(--rarity-ancient-background) 0%, var(--rarity-default-background) 100%);
+  box-shadow: 0 0 8px var(--rarity-ancient-shine);
+}
+.play-card.cosmic {
+  border-color: var(--rarity-cosmic-normal);
+  color: var(--rarity-cosmic-normal);
+  background: linear-gradient(135deg, var(--rarity-cosmic-background) 0%, var(--rarity-default-background) 100%);
+  box-shadow: 0 0 8px var(--rarity-cosmic-shine);
+}
+.play-card.divine {
+    border-color: var(--rarity-divine-normal);
+  color: var(--rarity-divine-normal);
+  background: linear-gradient(135deg, var(--rarity-divine-background) 0%, var(--rarity-default-background) 100%);
+  box-shadow: 0 0 8px var(--rarity-divine-shine);
+}
+
+
+.play-card:hover.common {
+  box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.4);
+}
+.play-card:hover.uncommon {
+  box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(46, 204, 113, 0.4);
+}
+.play-card:hover.rare {
+  box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(52, 152, 219, 0.4);
+}
+.play-card:hover.epic {
+box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(155, 89, 182, 0.4);
+}
+.play-card:hover.legendary {
+box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(241, 196, 15, 0.4);
+}
+.play-card:hover.mythic {
+box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(231, 76, 60, 0.4);
+}
+.play-card:hover.unique {
+box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(26, 188, 156, 0.4);
+}
+.play-card:hover.relic {
+    box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(211, 84, 0, 0.4);
+}
+.play-card:hover.ancient {
+box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(46, 213, 115, 0.4);
+}
+.play-card:hover.cosmic {
+box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 107, 129, 0.4);
+}
+.play-card:hover.divine {
+box-shadow: -15px 20px 40px rgba(0, 0, 0, 0.7), 0 0 20px rgba(116, 185, 255, 0.5);
 }
 
 /* Schatten-Effekt beim Hovern */

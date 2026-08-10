@@ -4,7 +4,7 @@
     <div class="play-card {{card.rarityAsStr}}">
         <div class="play-card-header">
             <h2 class="play-card-title {{card.rarityAsStr}}">{{card.title}}</h2>
-            <span class="play-card-cost">{{card.cost}}📀</span>
+            <span class="play-card-cost">{{format_number(card.costForRarityLevel)}}📀</span>
         </div>
             
         <div class="play-card-image-container">

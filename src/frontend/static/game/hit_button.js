@@ -1,12 +1,3 @@
-/* 
-Add Suffix / Prefix
-Add _event_target
-Add _result_target
-Add _api_target
-*/
-function onClickHit() {
-
-}
 document.addEventListener("DOMContentLoaded", () => {
     // Wähle das Div anhand seiner Klasse aus
     const triggerDiv = document.querySelector(".hit-button");
@@ -21,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 // Anfrage an deine Flask-API (passe den Endpunkt an, z. B. '/api/daten')
                 const not_needed_response = await fetch("/api/increase?data=[coin]");
-                const response = await fetch("/api/get?data=[coin, material]");
+                const response = await fetch("/api/get");
 
                 if (!response.ok) {
                     throw new Error(`HTTP-Fehler! Status: ${response.status}`);

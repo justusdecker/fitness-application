@@ -1,16 +1,13 @@
 <div class="carousel-container">
   <button id="prevBtn" class="nav-btn">‹</button>
         {% for quest in quests %}
-            <div class="quests card ">
+            <div class="quests card " id="{{quest}}">
                 <h1>{{quest}}</h1>    
                 
                 <div class="besides">
                     <div class="info-card">
                         <p>{{quests[quest].message}}</p>
                     </div>
-                    <form action="game/buy/{{quest}}" method="get">
-                        <button class="high-icon btn" id="{{quest}}">{{quests[quest].xp}}✨</button>
-                    </form>
                 </div>
                 
                 <div class="besides">
@@ -24,10 +21,23 @@
                     {%elif quests[quest].type == 'nutrition'%}
                     <p class="high-icon">🍗</p>
                     {% endif %}
+                </div>
+                <div class="besides">
+                    {% if quests[quest].coin %}
+                    <span>✨</span><span>{{quests[quest].xp}}</span>
+                    {% endif %}
                     
+                    {% if quests[quest].coin %}
+                    <span>📀</span><span>{{quests[quest].coin}}</span>
+                    {% endif %}
+
+                    {% if quests[quest].material %}
+                    <span>🧱</span><span>{{quests[quest].material}}</span>
+                    {% endif %}
                 </div>
             </div>
         {% endfor %}
     <button id="nextBtn" class="nav-btn">›</button>
 </div>
 <script src="{{url_for('static', filename='common/carousel.js')}}"></script>
+<script src="{{url_for('static', filename='game/reallife_quests.js')}}"></script>

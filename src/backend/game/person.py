@@ -21,6 +21,8 @@ class __Person:
         self.xp_multiplier = 1
         
         self.cards = [Card(card_info, CARDS[card_info]['description'], CARDS[card_info]['cost'], CARDS[card_info]['img'], CARDS[card_info]['max_rarity']) for card_info in CARDS] # DEMO CARDS
+        self.cards_at_work = []
+        
         
         self.__load(name)
     
@@ -39,7 +41,6 @@ class __Person:
         self.material = data['material']
         self.xp = data['xp']
         
-        
         self.coin_multiplier = data['coin_multiplier']
         self.material_multiplier = data['material_multiplier']
         self.rarity_min_value = data['rarity_min_value']
@@ -56,7 +57,8 @@ class __Person:
             'material_multiplier': self.material_multiplier,
             'rarity_min_value': self.rarity_min_value,
             'xp_multiplier': self.xp_multiplier,
-            'img': self.img
+            'img': self.img,
+            'cards_at_work': self.cards_at_work
         }
         
         with open(self.__savePath, 'w') as f:

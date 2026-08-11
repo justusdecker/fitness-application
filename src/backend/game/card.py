@@ -1,4 +1,4 @@
-from src.backend.game.person import PERSON
+
 MAX_RARITY = 11
 class Card:
     def __init__(self, title, description,cost, img,rarity):

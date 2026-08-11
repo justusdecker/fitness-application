@@ -30,6 +30,8 @@ class GameAPI:
     def api_increase():
         data = request.args.get('data')
         if data is None: raise NotImplementedError()
-        PERSON.coin += 1
+        inc = int(((PERSON.level * 2) + ((PERSON.level // 10) * 10) + 1))
+        PERSON.coin += inc
+        print(F'{inc}📀')
         PERSON.save()
         return "", 200

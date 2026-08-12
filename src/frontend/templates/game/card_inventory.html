@@ -1,36 +1,15 @@
+<script src ="{{ url_for('static', filename='game/play_card.js') }}"></script>
 <div class="card">
     <div class="all-play-cards">
         {% for card in PERSON.cards %}
-        <div class="play-card-container">
-            <div class="play-card {{card.rarityAsStr}}">
-                <div class="play-card-header">
-                    <h2 class="play-card-title {{card.rarityAsStr}}">{{card.title}}</h2>
-                    <span class="play-card-cost">{{format_number(card.costForRarityLevel)}}📀</span>
-                </div>
-                    
-                <div class="play-card-image-container">
-                    <img src="{{card.img}}" alt="{{card.img}}" class="play-card-image">
-                </div>
-                    
-                <div class="play-card-body">
-                    <p class="play-card-description">
-                        {{card.description}}
-                    </p>
-                </div>
-                    
-                <div class="play-card-footer">
-                    <div class="stat atk">
-                        <span class="stat-label">ATK</span>
-                        <span class="stat-value">WBR</span>
-                    </div>
-                    <div class="stat def">
-                        <span class="stat-label">DEF</span>
-                        <span class="stat-value">WBR</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% set cardData = card.todict() %}
+        <script>
+           document
+           .querySelector(".all-play-cards")
+           .innerHTML += showPlayCard({{ cardData | tojson }});
+        </script>
         {% endfor %}
     </div>
 </div>
+
 <script src ="{{ url_for('static', filename='game/pct.js') }}"></script>

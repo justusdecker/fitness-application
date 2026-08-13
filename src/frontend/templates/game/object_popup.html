@@ -1,0 +1,7 @@
+{% for card in PERSON.cards %}
+    {% set cardData = card.todict() %}
+    <script>
+        document.body.insertAdjacentHTML('beforeend', getPlayCardDialog({{ cardData | tojson }}));
+        
+    </script>
+{% endfor %}

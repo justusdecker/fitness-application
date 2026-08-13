@@ -27,6 +27,12 @@ body {
     max-height: 50vh;
 }
 
+.card.extended {
+    width: 70%;
+    overflow-y: visible;
+    max-height: 70vh;
+}
+
 .info-card {
     background-color: var(--panel-bg);
     border: 2px solid var(--border-color);
@@ -71,17 +77,58 @@ body {
 
 
 .nav-btn {
-  background-color: #333;
-  color: white;
-  border: none;
+  background-color: var(--rarity-legendary-shine);
+  border: 3px solid black;
+  color: black;
+
   font-size: 24px;
+  font-weight: 1000;
+  text-shadow: 1px 2px 12px white;
+  text-align: center;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
   transition: background 0.2s;
 }
+.nav-btn.close {
+    background-color: var(--rarity-mythic-shine);
+}
+
+.nav-btn.extended {
+    width: max-content;
+    border-radius: 10px;
+    padding: 5px;
+}
 
 .nav-btn:hover {
   background-color: #555;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5); /* Dunkler Hintergrund */
+}
+
+dialog {
+    /* Reset default browser styles */
+    padding: 0;
+    border: none;
+    background: transparent;
+    
+    /* Full screen backdrop / positioning */
+    width: 100vw;
+    height: 100vh;
+    max-width: none; /* Override default browser max-width for dialogs */
+    max-height: none; /* Override default browser max-height for dialogs */
+    
+    /* Flexbox centering */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Ensure it breaks out of default dialog positioning */
+    margin: auto;
+}
+dialog:hover {
+    background-color: rgba(0, 0, 0, 0.3);
 }

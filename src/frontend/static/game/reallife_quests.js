@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log();
             levelBadgeDiv.innerText = `Lv. ${level}`;
             xpCurrentMaxSpan.innerText = `${xp} / ${xpMax} XP`;
-            xpBarDiv.width = xpBarPercentage; //! Maybe this is wrong
+            xpBarDiv.style.width = xpBarPercentage + '%';
             coinSpan.innerText = `${data.coin}`;
             materialSpan.innerText = `${data.material}`;
         });

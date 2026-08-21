@@ -1,0 +1,14 @@
+<script src ="{{ url_for('static', filename='game/play_card.js') }}"></script>
+<div class="card" style="margin-bottom: 40px;">
+    <div class="all-play-cards store">
+        {{STORE.reroll()}}
+        {% for card in STORE.cards %}
+        {% set cardData = card.todict() %}
+        <script>
+
+           document.querySelector(".all-play-cards.store").insertAdjacentHTML('beforeend', showPlayCard({{ cardData | tojson }}));
+        </script>
+        {% endfor %}
+    </div>
+    <div class="">RESET IN: {{ STORE.reset_time }}</div>
+</div>

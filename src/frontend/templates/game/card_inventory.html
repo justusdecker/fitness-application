@@ -1,16 +1,14 @@
-<script src ="{{ url_for('static', filename='game/play_card.js') }}"></script>
+
 <div class="card">
-    <div class="all-play-cards">
+    <div class="all-play-cards inv">
         {% for card in PERSON.cards %}
         {% set cardData = card.todict() %}
         <script>
 
-           document.querySelector(".all-play-cards").insertAdjacentHTML('beforeend', showPlayCard({{ cardData | tojson }}));
+           document.querySelector(".all-play-cards.inv").insertAdjacentHTML('beforeend', showPlayCard({{ cardData | tojson }}));
         </script>
         {% endfor %}
     </div>
 </div>
 
-<script src ="{{ url_for('static', filename='game/play_card.js') }}"></script>
-<script src ="{{ url_for('static', filename='game/object_popup.js') }}"></script>
 {% include 'game/object_popup.html' %}

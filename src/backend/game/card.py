@@ -1,26 +1,44 @@
 from src.backend.game.format_number import format_number
 MAX_RARITY = 11
+ESSENTIALS = [
+    'title',
+    'description',
+    'cost-fn',
+    'rarity',
+    'img',
+    'id',
+    'owned'
+]
+RARITYS = ['common',
+        'uncommon',
+        'rare',
+        'epic',
+        'legendary',
+        'mythic',
+        'unique',
+        'relic',
+        'ancient',
+        'cosmic',
+        'divine']
 class Card:
     id = 0
     
-    def __init__(self, title, description,cost, img,rarity):
+    
+    def __init__(self, title, description,cost, img,rarity, owned):
         self.title = title
         self.description = description
         self.cost = cost
         self.rarity = rarity
         self.img = img
+        self.owned = owned
         self.id = Card.id
         Card.id += 1
     
     def todict(self) -> dict:
-        return {
-            'title': self.title,
-            'description': self.description,
-            'cost': format_number(self.costForRarityLevel),
-            'rarity': self.rarityAsStr,
-            'img': self.img,
-            'id': self.id
-        }
+        """
+        Gibt ein Dictionary der wichtigsten Eigenschaften der Klasse zurück.
+        """
+        return {key.replace('-fn',''): (format_number(getattr(self, key.replace('-fn',''))) if key.endswith('-fn') else getattr(self, key)) for key in ESSENTIALS}
     
     def __debug(self):
         if self.description == '...': print(f"""\033[34m description of {self.title} is ...""")
@@ -41,14 +59,4 @@ class Card:
     
     @property
     def rarityAsStr(self) -> str:
-        return ['common',
-         'uncommon',
-         'rare',
-         'epic',
-         'legendary',
-         'mythic',
-         'unique',
-         'relic',
-         'ancient',
-         'cosmic',
-         'divine'][self.rarity]
+        return RARITYS[self.rarity]

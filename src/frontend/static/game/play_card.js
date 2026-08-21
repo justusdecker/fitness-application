@@ -1,17 +1,32 @@
-const playing_cards = document.querySelectorAll('.play-card');
+
+function setCardToWork(id) {
+    window.location.href = `/api/update/cardtowork/${id}`
+}
 
 function getPlayCardDialog(data) {
+    
+    const buySellText = data.owned ? '<div class="nav-btn extended">Verkaufen</div>' : '<div class="nav-btn extended">Kaufen</div>';
+    const workInventorUpgradeText = data.owned ? `<div class="nav-btn extended" onClick="setCardToWork(${data.id})">Arbeit</div><div class="nav-btn extended">Inventar</div><div class="nav-btn extended">Upgrade</div>` : '';
+
     return `
 <dialog  id="card-dialog-${data.id}">
     
     <div class="card extended object-popup">
-        <div class="nav-btn close">X</div>
-        <div class="nav-btn extended">Arbeit</div>
-        <div class="nav-btn extended">Inventar</div>
-        <div class="nav-btn extended">Upgrade</div>
-        <div class="nav-btn extended">Verkaufen</div>
-        <div class="nav-btn extended">Kaufen</div>
-        ${showPlayCard(data, true)}
+        <div class="besides spaced">
+            <h1 style="color:var(--rarity-mythic-normal);">Kartenverwaltung</h1>
+            <div class="nav-btn close" onClick="closeCardDialog('card-dialog-${data.id}')">X</div>
+        </div>
+        <div class="besides">
+            ${showPlayCard(data, true)}
+            <div>
+                ${workInventorUpgradeText}
+                ${buySellText}
+            </div>
+        </div>
+    
+       
+        
+        
         <!--
         Show Card
         If Card is not from the User <- do not show options! <- only buy
@@ -35,7 +50,8 @@ function showPlayCard(data, rec = false) {
             <div class="play-card ${data.rarity}">
                 <div class="play-card-header">
                     <h2 class="play-card-title ${data.rarity}">${data.title}</h2>
-                    <span class="play-card-cost">${data.cost}📀</span>
+                    <span class="play-card-cost" id="${data.rarity}">${data.cost}📀</span>
+                    
                 </div>
                     
                 <div class="play-card-image-container">
@@ -49,13 +65,10 @@ function showPlayCard(data, rec = false) {
                 </div>
                     
                 <div class="play-card-footer">
-                    <div class="stat atk">
-                        <span class="stat-label">ATK</span>
-                        <span class="stat-value">WBR</span>
-                    </div>
-                    <div class="stat def">
-                        <span class="stat-label">DEF</span>
-                        <span class="stat-value">WBR</span>
+                    <div class="stat">
+                        <span class="stat-label">probably remove this</span>
+                        <span class="stat-value">...</span>
+                    
                     </div>
                 </div>
             </div>
@@ -65,36 +78,57 @@ function showPlayCard(data, rec = false) {
 
 }
 
-
-
-playing_cards.forEach(card => {
-  // Mausbewegung für jede einzelne Karte
-  card.addEventListener('mousemove', (e) => {
-    const rect = card.getBoundingClientRect();
+function costRarityShowSwitcher() {
+    const objects = document.querySelectorAll('.play-card-cost');
     
-    // Mausposition relativ zur Kartenmitte
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    
-    // Drehwinkel berechnen (max. 15 Grad Neigung)
-    const rotateX = -((y - centerY) / centerY) * 15;
-    const rotateY = ((x - centerX) / centerX) * 15;
-    
-    // Transformation anwenden
-    card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
-  });
+    objects.forEach(object => {
+        // Ursprünglichen Inhalt (z.B. Kosten) speichern
+        const originalContent = object.innerHTML;
+        
+        // Alternativen Inhalt festlegen (z.B. die ID oder ein Dataset-Attribut)
+        const hoverContent = object.id; 
 
-  // Karte zurücksetzen, wenn die Maus sie verlässt
-  card.addEventListener('mouseleave', () => {
-    card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
-    card.style.transition = 'transform 0.5s ease'; // Sanftes Zurückgleiten
-  });
+        object.addEventListener('mouseover', () => {
+            object.innerHTML = hoverContent;
+        });
 
-  // Transition während der Bewegung entfernen
-  card.addEventListener('mouseenter', () => {
-    card.style.transition = 'none';
-  });
-});
+        object.addEventListener('mouseleave', () => {
+            object.innerHTML = originalContent;
+        });
+    });
+}
+
+function playingCardsForeacher() {
+    const playing_cards = document.querySelectorAll('.play-card');
+    playing_cards.forEach(card => {
+        // Mausbewegung für jede einzelne Karte
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            
+            // Mausposition relativ zur Kartenmitte
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            // Drehwinkel berechnen (max. 15 Grad Neigung)
+            const rotateX = -((y - centerY) / centerY) * 15;
+            const rotateY = ((x - centerX) / centerX) * 15;
+            
+            // Transformation anwenden
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+        });
+
+        // Karte zurücksetzen, wenn die Maus sie verlässt
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+            card.style.transition = 'transform 0.5s ease'; // Sanftes Zurückgleiten
+        });
+
+        // Transition während der Bewegung entfernen
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'none';
+        });
+        });
+}

@@ -6,6 +6,7 @@ from src.backend.game.level_calculations import LevelAPI
 from src.backend.game.card import Card
 from src.backend.game.constants import QUESTS, CARDS
 from src.backend.game.person import PERSON
+from src.backend.game.store import STORE
 from src.backend.game.format_number import format_number
 
 @app.route('/game/buy/<key>',methods = [GET])
@@ -26,4 +27,5 @@ def game_index():
         max_xp = LevelAPI.get_xp_max_for_current_level(PERSON.xp),
         quests = QUESTS,
         format_number = format_number,
-        PERSON = PERSON) 
+        PERSON = PERSON,
+        STORE = STORE) 

@@ -5,8 +5,17 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='game/raritys.css') }}">
 {% endblock %}
 {% block content %}
+<!-- Wir nutzen play_card.js von hier um Dopplungen und damit einhergehende Fehler zu vermeiden.-->
+<script src ="{{ url_for('static', filename='game/play_card.js') }}"></script>
 {% include 'game/hit_button.html' %}
 {% include 'game/rpg_like.html' %}
 {% include 'game/quests.html' %}
 {% include 'game/card_inventory.html' %}
+{% include 'game/card_at_work.html' %}
+{% include 'game/card_store.html' %}
+<script>
+    playingCardsForeacher() //! Darf nur einmal gecalled werden!
+    costRarityShowSwitcher()
+</script>
+<script src ="{{ url_for('static', filename='game/object_popup.js') }}"></script>
 {% endblock %}

@@ -20,7 +20,7 @@ class __Person:
         self.rarity_min_value = 0
         self.xp_multiplier = 1
         
-        self.cards = [Card(card_info, CARDS[card_info]['description'], CARDS[card_info]['cost'], CARDS[card_info]['img'], CARDS[card_info]['max_rarity']) for card_info in CARDS] # DEMO CARDS
+        self.cards = [Card(card_info, CARDS[card_info]['description'], CARDS[card_info]['cost'], CARDS[card_info]['img'], CARDS[card_info]['max_rarity'], True) for card_info in CARDS] # DEMO CARDS
         self.cards_at_work = []
         
         
@@ -34,7 +34,7 @@ class __Person:
         with open(self.__savePath) as f:
             data = safe_load(f)
         
-        self.img = data['img']
+        self.img = data['img'] if 'img' in data else ''
             
         self.history = History(data['history'])
         self.coin = data['coin']
@@ -58,11 +58,16 @@ class __Person:
             'rarity_min_value': self.rarity_min_value,
             'xp_multiplier': self.xp_multiplier,
             'img': self.img,
-            'cards_at_work': self.cards_at_work
+            'cards_at_work': []
         }
         
         with open(self.__savePath, 'w') as f:
             safe_dump(data, f,encoding='utf-8')
+
+    def setCardToWork(self, id):
+        card = [c for c in self.cards if c.id == int(id)][0] # No check because we trust the player...
+        self.cards_at_work.append(card)
+        self.cards.remove(card)
 
     @property
     def xpPercentage(self):
@@ -90,10 +95,16 @@ class __Person:
     
     @property
     def formattedMaterial(self) -> str:
+        """
+        Gibt die formatierte Version für Material zurück
+        """
         return format_number(self.material)
     
     @property
     def __savePath(self) -> str:
+        """
+        Gibt den Speicherpfad ./data/{name}.yml zurück
+        """
         return f'./data/{self.name}.yml'
     
 

@@ -1,16 +1,21 @@
 // const cards = document.querySelectorAll('.play-card');
+/**
+ * 
+ * @param {string} id
+ * @return {null} 
+ */
 function closeCardDialog(id) {
     const dialog = document.getElementById(id);
     console.log(dialog, id)
     dialog.close();
-        
+    dialog.style.display = 'none';
 }
-
 
 function openCardDialog(id) {
     const dialog = document.getElementById(id);
 
     if (!dialog.open) {
+        dialog.style.display = 'flex';
         dialog.showModal();
     }
     

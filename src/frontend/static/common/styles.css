@@ -45,6 +45,9 @@ body {
 .besides {
     display: flex;
 }
+.besides.spaced {
+    justify-content: space-between;
+}
 
 .btn {
     background-color: #05966899;
@@ -93,6 +96,7 @@ body {
 }
 .nav-btn.close {
     background-color: var(--rarity-mythic-shine);
+    
 }
 
 .nav-btn.extended {
@@ -122,12 +126,13 @@ dialog {
     max-height: none; /* Override default browser max-height for dialogs */
     
     /* Flexbox centering */
-    display: flex;
+
     justify-content: center;
     align-items: center;
     
     /* Ensure it breaks out of default dialog positioning */
     margin: auto;
+    display: none;
 }
 dialog:hover {
     background-color: rgba(0, 0, 0, 0.3);

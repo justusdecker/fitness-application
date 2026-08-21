@@ -1,0 +1,14 @@
+
+<div class="card">
+    <div class="all-play-cards inv">
+        {% for card in PERSON.cards_at_work %}
+        
+        {% set cardData = card.todict() %}
+        <script>
+           
+           document.querySelector(".all-play-cards.inv").insertAdjacentHTML('beforeend', showPlayCard({{ cardData | tojson }}));
+        </script>
+        {% endfor %}
+    </div>
+</div>
+{% include 'game/object_popup.html' %}

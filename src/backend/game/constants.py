@@ -1,4 +1,5 @@
 from src.backend.common.fhandler import yaml_read
+# Default Data für den Fall das noch kein Spielstand existiert.
 NEW_DATA = {
     "name": "",
     "xp": 0,
